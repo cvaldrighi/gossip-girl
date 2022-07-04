@@ -3,6 +3,11 @@
     <router-link to="/">
       <h1>valdrigh dev</h1>
     </router-link>
+    <router-link to="/login">
+      <div class="menu">
+        <p>login</p>
+      </div>
+    </router-link>
   </header>
   <main>
     <router-view />
@@ -14,7 +19,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif;
 
   &::selection {
     background: transparentize($color: #e21593, $amount: 0.5);
@@ -32,7 +37,8 @@ a {
 header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  position: relative;
+
   padding: 10px;
   background-color: rgb(11, 2, 94);
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
@@ -40,6 +46,16 @@ header {
   h1 {
     color: #9a94e7;
     font-size: 28px;
+  }
+
+  .menu {
+    position: absolute;
+    right: 10px;
+    top: 30%;
+
+    p {
+      color: #fff;
+    }
   }
 
 }
