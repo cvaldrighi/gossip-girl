@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <h1 v-if="user">hello {{ user.token }}</h1>
     <div class="feature-card">
       <router-link to="/articles/zzz-sdmngj">
         <img src="https://p4.wallpaperbetter.com/wallpaper/403/236/853/vinyl-music-wallpaper-preview.jpg" alt=""
@@ -19,9 +20,7 @@
     <div class="articles-feed">
       <div class="article-card" v-for="article of result.articles" :key="article.slug">
         <div class="product-image">
-          <img
-            src="https://www.10wallpaper.com/wallpaper/1366x768/1802/New_York_Manhattan_Brooklyn_Bridge_Night_1366x768.jpg"
-            alt="article img" />
+          <img :src="article.image" alt="article img" />
         </div>
         <div class="detail">
           <h3 class="title">{{ article.title }}</h3>
@@ -122,20 +121,22 @@
   .articles-feed {
     display: flex;
     flex-wrap: wrap;
-    margin: 0px 8px;
+    justify-content: center;
 
     .article-card {
       margin: 4px;
 
       .product-image {
         position: relative;
-        display: block;
+        display: flex;
+
 
         img {
           display: block;
           width: 100%;
           height: 275px;
           object-fit: cover;
+          border-radius: 8px 8px 0px 0px;
         }
       }
 
@@ -143,7 +144,7 @@
         background-color: #5248e2;
         padding: 16px 8px;
         flex: 1 1 100%;
-        border-radius: 0px 0px 8px;
+        border-radius: 0px 0px 8px 8px;
 
         h3,
         p {
