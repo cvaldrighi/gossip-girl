@@ -26,8 +26,7 @@ export default {
                 }
             })).data;
             console.log(this.result);
-
-            //this.$router.push('/');
+            this.$router.push('/');
         }
     }
 }

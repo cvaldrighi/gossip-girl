@@ -26,13 +26,15 @@
 
     <div class="articles-feed">
       <div class="article-card" v-for="article of result.articles" :key="article.slug">
-        <div class="product-image">
-          <img :src="article.image" alt="article img" />
-        </div>
-        <div class="detail">
-          <h3 class="title">{{ article.title }}</h3>
-          <p class="desc">{{ article.description }}</p>
-        </div>
+        <router-link :to="{ name: 'article', params: { id: article.slug } }">
+          <div class="product-image">
+            <img :src="article.image" alt="article img" />
+          </div>
+          <div class="detail">
+            <h3 class="title">{{ article.title }}</h3>
+            <p class="desc">{{ article.description }}</p>
+          </div>
+        </router-link>
       </div>
     </div>
   </div>

@@ -4,12 +4,18 @@
       <h1>valdrigh dev</h1>
     </router-link>
     <Slide right noOverlay>
-      <router-link to="/register">
-        <p>Register</p>
-      </router-link>
-      <router-link to="/login">
-        <p>Login</p>
-      </router-link>
+      <div class="menu" v-if="user">
+        <p>Bem-vinda, {{ result.user.username }}</p>
+        <p>Logout</p>
+      </div>
+      <div v-if="!user">
+        <router-link to="/register">
+          <p>Register</p>
+        </router-link>
+        <router-link to="/login">
+          <p>Login</p>
+        </router-link>
+      </div>
     </Slide>
   </header>
   <main>
@@ -56,6 +62,11 @@ header {
 
   p {
     color: #fff;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
   }
 }
 </style>
