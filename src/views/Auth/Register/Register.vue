@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="register" class="auth-search-box">
+    <form @submit.prevent="register" class="form-box">
         <input type="text" placeholder="your username" v-model="username" />
         <input type="text" placeholder="your email" v-model="email" />
         <input type="password" placeholder="your password" v-model="password" />

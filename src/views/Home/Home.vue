@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1 v-if="user">hello {{ user.token }}</h1>
+    <!--<h1 v-if="user">hello</h1>-->
     <div class="feature-card">
       <router-link to="/articles/zzz-sdmngj">
         <img src="https://p4.wallpaperbetter.com/wallpaper/403/236/853/vinyl-music-wallpaper-preview.jpg" alt=""
@@ -13,10 +13,17 @@
         </div>
       </router-link>
     </div>
-    <form @submit.prevent="searchArticle" class="search-box">
+    <div>
+      <router-link to="/create-article">
+        <button class="btn-primary">create article</button>
+      </router-link>
+
+    </div>
+    <form @submit.prevent="searchArticle" class="filter-search-box">
       <input type="text" placeholder="Filter by tag" v-model="search">
       <input type="submit" value="Search" />
     </form>
+
     <div class="articles-feed">
       <div class="article-card" v-for="article of result.articles" :key="article.slug">
         <div class="product-image">
@@ -35,6 +42,7 @@
 
 <style lang="scss">
 .home {
+
   .feature-card {
     position: relative;
 
@@ -67,7 +75,25 @@
     }
   }
 
-  .search-box {
+  .btn-primary {
+    width: 30%;
+    max-width: 400px;
+    background-color: #9a94e7;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: 0.4s;
+    margin-left: 35%;
+    margin-top: 1rem;
+
+    &:active {
+      background-color: #6b62e6;
+    }
+  }
+
+  .filter-search-box {
     display: flex;
     flex-direction: column;
     justify-content: center;

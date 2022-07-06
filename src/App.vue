@@ -17,13 +17,8 @@
   </main>
 </template>
 
-<script>
-import { Slide } from 'vue3-burger-menu';
-export default {
-  components: {
-    Slide
-  }
-}
+<script src="./main.js">
+
 </script>
 
 <style lang="scss">

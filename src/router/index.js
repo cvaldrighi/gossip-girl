@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home/Home.vue'
-import ArticleDetail from '../views/ArticleDetail/ArticleDetail.vue'
+import CreateArticle from '../views/Articles/CreateArticle/CreateArticle.vue'
+import ArticleDetail from '../views/Articles/ArticleDetail/ArticleDetail.vue'
 import Login from '../views/Auth/Login/Login.vue'
 import Register from '../views/Auth/Register/Register.vue'
 
@@ -21,8 +22,13 @@ const routes = [
     component: Register
   },
   {
+    path: '/create-article',
+    name: 'create-article',
+    component: CreateArticle
+  },
+  {
     path: '/articles/:id',
-    name: 'Article Detail',
+    name: 'article',
     component: ArticleDetail
   }
 ]
